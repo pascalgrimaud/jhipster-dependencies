@@ -1,35 +1,32 @@
 {
   "generator-jhipster": {
-    "baseName": "travisDefault",
+    "baseName": "travisOauth2SassInfinispan",
     "packageName": "io.github.jhipster.travis",
     "packageFolder": "io/github/jhipster/travis",
     "serverPort": "8080",
-    "authenticationType": "uaa",
-    "uaaBaseName": "travisUaa",
-    "cacheProvider": "hazelcast",
+    "authenticationType": "oauth2",
+    "cacheProvider": "infinispan",
     "enableHibernateCache": true,
     "clusteredHttpSession": false,
     "websocket": false,
     "databaseType": "sql",
-    "devDatabaseType": "h2Disk",
-    "prodDatabaseType": "mysql",
+    "devDatabaseType": "mariadb",
+    "prodDatabaseType": "mariadb",
     "searchEngine": false,
     "messageBroker": false,
-    "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "useSass": false,
-    "applicationType": "gateway",
+    "rememberMeKey": "448f9a67a8a292c4905a733ec22cc3b78e493c56",
+    "useSass": true,
+    "applicationType": "monolith",
     "testFrameworks": [
-      "gatling"
+      "gatling",
+      "protractor"
     ],
-    "jhiPrefix": "jhi",
-    "enableTranslation": true,
-    "nativeLanguage": "en",
-    "languages": [
-      "en"
-    ],
+    "jhiPrefix": "myPrefix",
     "travis": true,
+    "serviceDiscoveryType": false,
+    "enableTranslation": false,
     "clientPackageManager": "yarn",
     "clientFramework": "angularX"
   }

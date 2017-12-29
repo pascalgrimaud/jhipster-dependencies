@@ -1,38 +1,37 @@
 {
   "generator-jhipster": {
-    "applicationType": "microservice",
-    "baseName": "travisMicroserviceEureka",
+    "applicationType": "gateway",
+    "baseName": "travisDefault",
     "packageName": "io.github.jhipster.travis",
     "packageFolder": "io/github/jhipster/travis",
     "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": true,
-    "clusteredHttpSession": false,
+    "clusteredHttpSession": "hazelcast",
+    "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
     "prodDatabaseType": "mysql",
     "searchEngine": false,
-    "serviceDiscoveryType": "eureka",
+    "serviceDiscoveryType": "consul",
+    "useSass": false,
     "buildTool": "maven",
-    "jwtSecretKey": "f19f0827c622eb9b81f5227a869ccd44932d78eb",
     "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [
       "en",
       "fr"
     ],
+    "enableSocialSignIn": false,
     "testFrameworks": [
       "gatling"
     ],
-    "skipClient": true,
-    "skipUserManagement": true,
-    "serverPort": "8081",
-    "jhiPrefix": "jhi",
+    "serverPort": "8080",
+    "jhiPrefix": "myPrefix",
     "travis": true,
-    "websocket": false,
     "messageBroker": false,
-    "enableSocialSignIn": false,
-    "clientFramework": "angular1",
-    "clientPackageManager": "yarn"
+    "jwtSecretKey": "6eca1d24b145ed1fafc738d2afa023a3362b6813",
+    "clientPackageManager": "yarn",
+    "clientFramework": "angularX"
   }
 }
