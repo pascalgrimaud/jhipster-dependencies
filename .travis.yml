@@ -22,7 +22,7 @@ env:
     - PROFILE=dev
     - RUN_APP=1
     - PROTRACTOR=0
-    - JHIPSTER_TRAVIS=$TRAVIS_BUILD_DIR/travis
+    - JHIPSTER_TRAVIS=$TRAVIS_BUILD_DIR/generator-jhipster/travis
     - JHIPSTER_INSTALL=$JHIPSTER_TRAVIS/install
     - JHIPSTER_SAMPLES=$JHIPSTER_TRAVIS/samples
     - JHIPSTER_SCRIPTS=$JHIPSTER_TRAVIS/scripts
@@ -33,20 +33,20 @@ env:
     - SPRING_JPA_SHOW_SQL=false
   matrix:
     - JHIPSTER=ngx-mysql PROFILE=prod PROTRACTOR=1
-    - JHIPSTER=ngx-psql-es-noi18n PROFILE=prod PROTRACTOR=1
-    - JHIPSTER=ngx-gradle-fr PROFILE=prod PROTRACTOR=1
-    - JHIPSTER=ngx-mariadb-oauth2-sass-infinispan PROTRACTOR=1
-    - JHIPSTER=ngx-h2mem-social-ws-nol2
-    - JHIPSTER=ngx-mongodb-kafka-cucumber
-    - JHIPSTER=ngx-session-cassandra-fr
-    - JHIPSTER=ngx-couchbase
-    - JHIPSTER=ms-ngx-gateway-eureka
-    - JHIPSTER=ms-ngx-gateway-consul-clustered
-    - JHIPSTER=ms-ngx-gateway-uaa
-    - JHIPSTER=ms-micro-eureka
-    - JHIPSTER=ms-micro-consul
-    - JHIPSTER=react-default
-    - JHIPSTER=ng1-default
+    # - JHIPSTER=ngx-psql-es-noi18n PROFILE=prod PROTRACTOR=1
+    # - JHIPSTER=ngx-gradle-fr PROFILE=prod PROTRACTOR=1
+    # - JHIPSTER=ngx-mariadb-oauth2-sass-infinispan PROTRACTOR=1
+    # - JHIPSTER=ngx-h2mem-social-ws-nol2
+    # - JHIPSTER=ngx-mongodb-kafka-cucumber
+    # - JHIPSTER=ngx-session-cassandra-fr
+    # - JHIPSTER=ngx-couchbase
+    # - JHIPSTER=ms-ngx-gateway-eureka
+    # - JHIPSTER=ms-ngx-gateway-consul-clustered
+    # - JHIPSTER=ms-ngx-gateway-uaa
+    # - JHIPSTER=ms-micro-eureka
+    # - JHIPSTER=ms-micro-consul
+    # - JHIPSTER=react-default
+    # - JHIPSTER=ng1-default
 
 before_install:
   - export TZ=Australia/Canberra
@@ -64,7 +64,7 @@ install:
   # install jhipster-dependencies
   - ./mvnw clean install -Dgpg.skip=true
   # install generator-jhipster
-  - $JHIPSTER_INSTALL/01-install-jhipster-stack.sh
+  - travis/install-jhipster.sh
   - $JHIPSTER_INSTALL/02-checkVersion.sh
   # generate project and entities
   - $JHIPSTER_SCRIPTS/01-generate-entities.sh
